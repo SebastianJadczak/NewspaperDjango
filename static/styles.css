@@ -1,18 +1,49 @@
+
+/* stylizacja całej strony */
 div.wrap{
 margin:0 auto;
-max-width:85vw;
+max-width:90vw;
+}
+
+/* Górne menu */
+div.wrap div.nav_top{
+display:flex;
+flex-direction:row;
 }
 
 div.nav_top div.logo{
-width:20vw;
-height:10vh;
-}
-
-img.logo{
-width:100px;
+width:200px;
 height:100px;
 }
 
-p{
-color:red;
+div.nav_top div.logo img.logo{
+width:180px;
+height:100px;
+}
+
+/* Dolne menu */
+
+div.wrap div.nav_bottom nav ul{
+display:flex;
+flex-direction:row;
+list-style:none;
+justify-content:space-between;
+border:1px solid grey;
+height:50px;
+line-height:50px;
+}
+
+div.wrap div.nav_bottom nav ul li{
+width:100%;
+}
+
+div.wrap div.nav_bottom nav ul li a{
+width:100%;
+height:100%;
+display:block;
+text-decoration:none;
+color:black;
+font-weight:bold;
+text-transform: uppercase;
+text-align:center;
 }
