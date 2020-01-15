@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = ['files_static']
+STATICFILES_DIRS = ['static']
 
 MEDIA_URL = '/media/'
 
@@ -130,4 +130,4 @@ LOGIN_URL = 'login'
 
 LOGIN_REDIRECT_URL = '/index_user'
 
-LOGOUT_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = '/index'

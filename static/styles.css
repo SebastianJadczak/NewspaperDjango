@@ -1,0 +1,16 @@
+div.wrap{
+max-width:95vw;
+}
+
+div.nav_top div.logo{
+width:20vw;
+height:10vh;
+}
+
+img.logo{
+width:10px;
+height:10px;
+}
+p{
+color:red;
+}
