@@ -9,13 +9,22 @@
         <div class="nav">
             <div class="nav_top">
                <div class="logo"><img src="{% static 'gazeta.png' %}" alt="logo" class="logo"></div>
-                <div class="search">
-                    <form action="">
-                        <input type="text">
-                        <button>Szukaj</button>
-                    </form>
+                <div class="top_right">
+                    <div class="search">
+                     <form action="">
+                           <input type="text" placeholder="Szukaj...">
+                            <button class="search">Szukaj</button>
+                      </form>
+                   </div>
+                  <nav class="top">
+                      <ul class="menu_top">
+                            <li><a href=""><i class="fas fa-heartbeat"></i>sympatia</a></li>
+                          <li><a href=""><i class="fas fa-shopping-basket"></i>zakupy</a></li>
+                          <li><a href=""><i class="fas fa-gamepad"></i>gry</a></li>
+                          <li><a href=""><i class="fas fa-phone-volume"></i>Kontakt</a></li>
+                      </ul>
+                  </nav>
                 </div>
-                <nav class="top"></nav>
             </div>
 
             <div class="nav_bottom">

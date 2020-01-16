@@ -20,10 +20,71 @@ div.nav_top div.logo{
 width:200px;
 height:100px;
 }
-
 div.nav_top div.logo img.logo{
 width:180px;
 height:100px;
+}
+
+div.wrap div.nav_top div.top_right{
+width:100%;
+display:flex;
+flex-direction: row;
+justify-content:flex-end;
+}
+
+/* wyszukiwarka */
+
+div.top_right div.search{
+margin-right:40px;
+}
+
+div.top_right div.search input{
+width:300px;
+height: 30px;
+border-radius:10px;
+background-color: rgb(234, 234, 234);
+
+}
+
+
+div.top_right div.search input::placeholder{
+padding-left:20px;
+}
+
+div.top_right div.search button.search{
+ background-color: rgb(255, 0, 0);
+ color: white;
+ padding:10px 25px;
+ border-radius:15px;
+ font-size:18px;
+ font-weight:bold;
+ box-shadow: 0 1px 1px black;
+}
+
+
+/* Menu górne-prawe */
+
+nav.top ul.menu_top{
+display:flex;
+list-style:none;
+width:100%;
+padding:10px;
+}
+
+
+nav.top ul.menu_top li{
+padding:10px;
+}
+
+nav.top ul.menu_top li a{
+width:100%;
+height:100%;
+display:block;
+text-decoration:none;
+color:black;
+font-weight:bold;
+text-transform: uppercase;
+text-align:center;
 }
 
 /* Dolne menu */
@@ -36,6 +97,7 @@ justify-content:space-between;
 border:1px solid rgb(217, 217, 217);
 height:50px;
 line-height:50px;
+box-shadow: 1px 1px 1px black;
 }
 
 div.wrap div.nav_bottom nav ul li{
