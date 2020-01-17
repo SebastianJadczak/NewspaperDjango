@@ -1,9 +1,10 @@
 {% extends 'basic.html' %}
-
-{% block title %} Witaj użytkowniku {% endblock %}
 {% load static %}
+{% block title %} Witaj użytkowniku {% endblock %}
+
+
 {% block body %}
-      <div class="wrap">
+    <div class="wrap">
 
         <div class="nav">
             <div class="nav_top">
@@ -24,7 +25,7 @@
 
                           <li><a href=""><i class="fas fa-gamepad "style="margin-right:10px; font-size:20px; color:red;"></i>gry</a></li>
 
-                          <li><a href="{% url 'kontakt' %}"><i class="fas fa-phone-volume" style="margin-right:10px; font-size:20px; color:red;"></i>Kontakt</a></li>
+                          <li><a href=""><i class="fas fa-phone-volume" style="margin-right:10px; font-size:20px; color:red;"></i>Kontakt</a></li>
                       </ul>
                      </nav>
                 </div>
@@ -51,22 +52,8 @@
         </header>
 
         <div class="main">
-            <div class="left_main">
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
 
-            </div>
-            <div class="right_main">
-                <div class="element"></div>
-                <div class="element"></div>
-            </div>
+
         </div>
 
         <div class="advertising">
@@ -77,4 +64,5 @@
 
         </footer>
     </div>
+
 {% endblock %}

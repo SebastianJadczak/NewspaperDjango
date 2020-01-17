@@ -36,7 +36,7 @@ justify-content:flex-end;
 
 div.top_right div.search{
 margin-right:40px;
-padding-top:5px;
+padding-top:8px;
 }
 
 div.top_right div.search input{
@@ -170,6 +170,7 @@ border:1px solid rgb(217, 217, 217);
 box-shadow: 1px 1px 1px black;
 }
 div.main div.right_main div.element:nth-of-type(1){
+margin-top:20px;
 margin-bottom:20px;
 }
 

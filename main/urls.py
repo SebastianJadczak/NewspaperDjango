@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from .views import test_response, index, index_user,wiadomosci,sport, biznes, regionalne, kultura, styl_zycia, technologie, motoryzacja
+from .views import test_response, index, index_user,wiadomosci,sport, biznes, regionalne, kultura, styl_zycia, technologie, motoryzacja,kontakt
 
 urlpatterns = [
     path('test/', test_response),
@@ -14,6 +14,7 @@ urlpatterns = [
     path('styl_zycia', styl_zycia, name='styl_zycia'),
     path('technologie', technologie, name='technologie'),
     path('motoryzacja', motoryzacja, name='motoryzacja'),
+    path('kontakt', kontakt, name='kontakt'),
 ]
 
 
