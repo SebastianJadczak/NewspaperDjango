@@ -25,7 +25,10 @@ SECRET_KEY = 'z&_^h(3*480iq$h^faghl^wqc_pd(w0k)^2hn#ai(*g4$v_zn='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+
+]
+
 
 
 # Application definition

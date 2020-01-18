@@ -1,6 +1,8 @@
 from django.urls import path, include
+from django.conf.urls import url
 
-from .views import test_response, index, index_user,wiadomosci,sport, biznes, regionalne, kultura, styl_zycia, technologie, motoryzacja,kontakt
+from . import views
+from .views import test_response, index, index_user,wiadomosci,sport, biznes, regionalne, kultura, styl_zycia, technologie, motoryzacja,email
 
 urlpatterns = [
     path('test/', test_response),
@@ -14,7 +16,16 @@ urlpatterns = [
     path('styl_zycia', styl_zycia, name='styl_zycia'),
     path('technologie', technologie, name='technologie'),
     path('motoryzacja', motoryzacja, name='motoryzacja'),
-    path('kontakt', kontakt, name='kontakt'),
+    path('kontakt', email, name='kontakt'),
+    url(r'^email/$',
+        views.email,
+        name='email'
+        ),
+    url(r'^thanks/$',
+        views.thanks,
+        name='thanks'
+        ),
+
 ]
 
 
