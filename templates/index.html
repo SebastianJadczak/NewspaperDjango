@@ -33,7 +33,7 @@
 
             <div class="nav_bottom">
                 <nav class="bottom">
-                    <ul>
+                    <ul class="menu_bottom">
                          <li><a href="{% url 'wiadomosci' %}">wiadomości</a></li>
                          <li><a href="{% url 'sport' %}">sport</a></li>
                          <li><a href="{% url 'biznes' %}">biznes</a></li>
@@ -53,15 +53,16 @@
 
         <div class="main">
             <div class="left_main">
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
-                <div class="element"></div>
+                <ul class="left_main">
+                    {% for element in news%}
+                    <li>
+
+                            <div class="title">{{element}}</div>
+                            <div class="photo"><img src="/media/{{element.photo}}" alt=""></div>
+
+                    </li>
+                    {%endfor%}
+                </ul>
 
             </div>
             <div class="right_main">

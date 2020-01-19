@@ -10,7 +10,7 @@ from .models import News
 
 def index(request):
     news = News.objects.all()
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'news':news})
 
 @login_required
 def index_user(request):
@@ -42,6 +42,7 @@ def technologie(request):
 
 def motoryzacja(request):
     return HttpResponse('test')
+
 
 
 def email(request):
