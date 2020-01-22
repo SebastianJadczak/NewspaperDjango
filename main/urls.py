@@ -2,7 +2,7 @@ from django.urls import path, include
 from django.conf.urls import url
 
 from . import views
-from .views import test_response, index, index_user,wiadomosci,sport, biznes, regionalne, kultura, styl_zycia, technologie, motoryzacja,email
+from .views import test_response, index, index_user,wiadomosci,sport, biznes, regionalne, kultura, styl_zycia, technologie, motoryzacja,email,UserFormView
 
 urlpatterns = [
     path('test/', test_response),
@@ -17,6 +17,8 @@ urlpatterns = [
     path('technologie', technologie, name='technologie'),
     path('motoryzacja', motoryzacja, name='motoryzacja'),
     path('kontakt', email, name='kontakt'),
+    path('register/', views.UserFormView.as_view(), name='register'),
+    url(r'^register^$', views.UserFormView.as_view(), name='register'),
     url(r'^email/$',
         views.email,
         name='email'
