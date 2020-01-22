@@ -57,18 +57,18 @@
             <div class="slider"></div>
         </header>
 
-        <div class="main">
+
             <div class="form">
-                 <form method="post">
+                 <form method="post" class="contact">
                      {% csrf_token %}
                      {{ form }}
                      <div class="form-actions">
-                     <button type="submit">Send</button>
+                     <button type="submit" class="contact">Send</button>
                      </div>
 
                  </form>
             </div>
-        </div>
+
 
         <div class="advertising">
 

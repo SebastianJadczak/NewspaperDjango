@@ -256,11 +256,36 @@ font-weight:bold;
 box-shadow: 0 1px 1px black;
 background-color: rgb(255, 0, 0);
 padding:5px 10px;
-border-radius:15px;
+border-radius:10px;
 margin: 8px 30% 0;
 }
 
 /* End */
+
+/* Strona kontakt */
+
+div.form{
+margin:80px auto;
+width:500px;
+}
+
+form.contact{
+display:flex;
+flex-direction:column;
+}
+
+button.contact{
+color:white;
+font-weight:bold;
+box-shadow: 0 1px 1px black;
+background-color: rgb(255, 0, 0);
+padding:7px 15px;
+border-radius:10px;
+font-size:18px;
+margin:8px 0 0 85%;
+}
+
+/*Stopka*/
 footer{
 height:8vh;
 border:1px solid rgb(217, 217, 217);
