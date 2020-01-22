@@ -5,11 +5,13 @@
 
 {% block body %}
     <div class="wrap">
+        <div class="log_form">
      {% if user.is_authenticated %}
-      Witaj: <b>{{user.name}}</b>    <a href="/logout/">wyloguj się</a>
+        Witaj: <b>{{user.name}}</b> <button class="logout">   <a href="/logout/">wyloguj się</a></button>
     {% else %}
-      <a href="/login/">zaloguj się</a>    <a href="/register/">rejestracja</a>
+        <button class="login"> <a href="/login/">zaloguj się</a> </button><button class="register">   <a href="/register/">rejestracja</a></button>
     {% endif %}
+            </div>
         <div class="nav">
             <div class="nav_top">
                <div class="logo"><img src="{% static 'gazeta.png' %}" alt="logo" class="logo"></div>

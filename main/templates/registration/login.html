@@ -3,12 +3,12 @@
 {% block title %} Zaloguj się {% endblock %}
 
 {% block body %}
-    <div style="margin-left:35%;margin-right:35%;">
-<fieldset>
-    <form method="post" action=".">{% csrf_token %}
-    <div style="text-align:left";>{{ form.as_p }}</div>
+    <div class="page_login" style="max-width:325px; margin: 10% auto; line-height:6vh;font-size:18px; border: 1px solid rgb(217, 210, 210);padding:5px;">
+<fieldset style="padding:10px 5px;">
+    <form method="post" action="." >{% csrf_token %}
+    <div style="margin-left:28px;";>{{ form.as_p }}</div>
     <input type="hidden" name="next" value="/" />
-    <input type="submit" value="Logowanie"/>    <input type="reset" value="Wartości domyślne"/>
+    <input type="submit" value="Logowanie" style="margin-left:35px; box-shadow: 0 1px 1px black; background-color: rgb(255, 0, 0); border:1px solid rgb(217, 217, 217); color:white; padding: 5px 8px;"/>    <input type="reset" value="Wartości domyślne" style="margin-left:10px;box-shadow: 0 1px 1px black; background-color: rgb(255, 0, 0); border:1px solid rgb(217, 217, 217); color:white; padding: 5px 8px;"/>
   </form>
 </fieldset>
 </div>

@@ -3,7 +3,13 @@
 {% block title %} Witaj użytkowniku {% endblock %}
 {% load static %}
 {% block body %}
-      <div class="wrap"><button><a href="{% url 'logout' %}">Wyloguj</a></button>
+      <div class="log_form">
+       {% if user.is_authenticated %}
+          Witaj: <b>{{user.name}}</b> <button class="logout">   <a href="/logout/">wyloguj się</a></button>
+      {% else %}
+        <button class="login"> <a href="/login/">zaloguj się</a> </button><button class="register">   <a href="/register/">rejestracja</a></button>
+      {% endif %}
+            </div>
         <div class="nav">
             <div class="nav_top">
                <div class="logo"><img src="{% static 'gazeta.png' %}" alt="logo" class="logo"></div>

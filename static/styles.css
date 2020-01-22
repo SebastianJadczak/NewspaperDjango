@@ -6,8 +6,30 @@ box-sizing: content-box;
 /* stylizacja całej strony */
 div.wrap{
 margin:0 auto;
-margin-top:30px;
+margin-top:20px;
 max-width:90vw;
+min-height: 100vh;
+}
+
+/* przyciski logowania */
+div.wrap div.log_form{
+text-align:right;
+margin-bottom:10px;
+}
+div.wrap div.log_form button{
+font-size:18px;
+font-weight:bold;
+box-shadow: 0 1px 1px black;
+background-color: rgb(255, 0, 0);
+padding:5px 10px;
+border-radius:15px;
+margin-right:10px;
+}
+
+div.wrap div.log_form button a{
+color:white;
+font-size:15px;
+text-decoration:none;
 }
 
 /* Górne menu logo */
@@ -138,8 +160,8 @@ box-shadow: 1px 1px 1px black;
 
 div.main{
 display:flex;
-min-height:130vh;
-flex-grow:1;
+min-height:1240px;
+flex-grow:4;
 }
 
 /* Ogłoszenia */
@@ -208,6 +230,35 @@ margin-bottom:20px;
 
 
 
+/* Strona rejestracji */
+
+div.register{
+width:280px;
+line-height:30px;
+margin: 10% auto;
+border: 1px solid rgb(107, 100, 100);
+padding:15px;
+font-weight:bold;
+}
+
+
+input.username_register{
+border:1px solid rgb(255, 0, 0);
+box-shadow: 1px 1px 1px black;
+margin-left:5px;
+}
+input.first{
+margin-left:12px;}
+
+div.register button{
+color:white;
+font-weight:bold;
+box-shadow: 0 1px 1px black;
+background-color: rgb(255, 0, 0);
+padding:5px 10px;
+border-radius:15px;
+margin: 8px 30% 0;
+}
 
 /* End */
 footer{

@@ -2,13 +2,10 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.template import RequestContext
-from django.template.loader import get_template
 from django.views import View
-
 from .forms import ContactForm, FormularzRejestracji
 from django.core.mail import send_mail, BadHeaderError
-from django.contrib.auth.forms import UserCreationForm
+
 
 #Strona główna projektu
 from .models import News

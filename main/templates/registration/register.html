@@ -3,13 +3,14 @@
 {% block title %} Zaloguj się {% endblock %}
 
 {% block body %}
-    <div class="register">
-        <h3>Zarejestruj się</h3>
-        <form method="post">
-            {% csrf_token %}
-            {{form.as_p}}
-            <button>Zarejestruj</button>
-        </form>
 
-    </div>
+        <div class="register">
+            <h3>Zarejestruj się</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button>Zarejestruj</button>
+            </form>
+        </div>
+
 {% endblock %}
