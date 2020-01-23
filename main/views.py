@@ -14,6 +14,8 @@ from django.db.models import Q
 from .models import News, Product
 
 
+
+
 def index(request):
     template_name = 'index.html'
 
@@ -25,14 +27,7 @@ def index(request):
     if query:
         list = list.filter(name=query)
         flaga = True
-
-
     return render(request, 'index.html',{'form': form, 'news':news, 'list':list, 'flaga':flaga})
-
-
-
-
-
 
 
 @login_required

@@ -60,10 +60,18 @@
         <div class="main">
 
             {% if flaga %}
-            {% for element in list %}
-            <p>{{element.name}}</p>
-            <p>{{element.description}}</p>
-        {% endfor %}
+
+            {% if list is not Null  %}
+
+               {% for element in list %}
+                <p>{{element.name}}</p>
+                <p>{{element.description}}</p>
+            {% endfor %}
+
+            {%else%}
+               <p>Nie ma takiego artykułu</p>
+            {%endif%}
+
             {%else%}
             <div class="left_main">
                 <ul class="left_main">
