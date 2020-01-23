@@ -17,7 +17,7 @@
                <div class="logo"><img src="{% static 'gazeta.png' %}" alt="logo" class="logo"></div>
                 <div class="top_right">
                     <div class="search">
-                     <form action="" method="GET">
+                     <form action="% url 'search_results %" method="get">
                             {{form}}
                             <button class="search">Szukaj</button>
                      </form>
@@ -58,32 +58,10 @@
         </header>
 
         <div class="main">
+          {{list.description}}
 
-            {% if flaga %}
-            {% for element in list %}
-            <p>{{element.name}}</p>
-            <p>{{element.description}}</p>
-        {% endfor %}
-            {%else%}
-            <div class="left_main">
-                <ul class="left_main">
-                    {% for element in news%}
-                    <li>
-
-                            <div class="title">{{element}}</div>
-                            <div class="photo"><img src="/media/{{element.photo}}" alt=""></div>
-
-                    </li>
-                    {%endfor%}
-                </ul>
-
-            </div>
-            <div class="right_main">
-                <div class="element"></div>
-                <div class="element"></div>
-            </div>
         </div>
-    {%endif%}
+
         <div class="advertising">
 
         </div>

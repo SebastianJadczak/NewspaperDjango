@@ -1,19 +1,39 @@
+from msilib.schema import ListView
+
+from django.contrib.admin.templatetags.admin_list import pagination
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
-from .forms import ContactForm, FormularzRejestracji
+from .forms import ContactForm, FormularzRejestracji, FormSearch
 from django.core.mail import send_mail, BadHeaderError
-
+from django.db.models import Q
 
 #Strona główna projektu
-from .models import News
+from .models import News, Product
 
 
 def index(request):
+    template_name = 'index.html'
+
     news = News.objects.all()
-    return render(request, 'index.html', {'news':news})
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query =request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+
+
+    return render(request, 'index.html',{'form': form, 'news':news, 'list':list, 'flaga':flaga})
+
+
+
+
+
+
 
 @login_required
 def index_user(request):
@@ -95,3 +115,12 @@ class UserFormView(View):
                     return redirect('../index')
 
         return render(request, self.template_name, {'form': form})
+
+
+def zakupy(request):
+    elements = Product.objects.all()
+    return render(request, 'zakupy.html', {'elements':elements})
+
+
+def search_results(request):
+    return render(request, 'search_results.html')

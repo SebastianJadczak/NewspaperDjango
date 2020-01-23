@@ -19,3 +19,16 @@ class FormularzRejestracji(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password']
+
+
+#Formularz dodawania produktów do koszyka
+
+class FormsAddProducts(forms.Form):
+    name = forms.CharField(max_length=120)
+    description = forms.CharField(max_length=600, widget=forms.Textarea(attrs={'class': 'description_product'}))
+    photo = forms.ImageField()
+    price = forms.FloatField(required=False, max_value=999999, min_value=0,)
+
+class FormSearch(forms.Form):
+
+    search = forms.CharField(max_length=200, label='', widget=forms.TextInput(attrs={'name': 'search'}))
