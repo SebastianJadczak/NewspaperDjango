@@ -186,8 +186,8 @@ list-style:none;
 ul.left_main li{
 width:350px;
 height:270px;
-border:1px solid rgb(217, 217, 217);
-box-shadow: 1px 1px 1px black;
+border:2px solid rgb(217, 217, 217);
+box-shadow: 2px 2px 1px black;
 margin: 16px 10px;
 }
 
@@ -196,14 +196,14 @@ font-size:19px;
 padding:5px;
 }
 ul.left_main li div.photo{
-width:348px;
-height:240px;
+width:351px;
+height:239px;
 margin: 0 auto;
 }
 
 ul.left_main li div.photo img{
 width:100%;
-height:95%;
+height:100%;
 }
 
 
