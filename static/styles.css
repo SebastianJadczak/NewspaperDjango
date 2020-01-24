@@ -285,6 +285,23 @@ font-size:18px;
 margin:8px 0 0 85%;
 }
 
+/* Strona produktu */
+
+
+li.product {
+
+}
+div.photo{
+width:200px;
+height:200px
+}
+div.photo img {
+width:100%;
+height:100%;
+}
+
+/* End*/
+
 /*Stopka*/
 footer{
 height:8vh;

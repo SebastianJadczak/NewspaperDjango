@@ -7,7 +7,7 @@ from .views import test_response, index, index_user, wiadomosci, sport, biznes, 
 
 urlpatterns = [
     path('test/', test_response),
-    path('', index, name='index'),
+    path('', views.Index.as_view(), name='index'),
     path("index_user", index_user),
     path('wiadomosci', wiadomosci, name='wiadomosci'),
     path('sport', sport, name='sport'),

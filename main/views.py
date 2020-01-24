@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import TemplateView
+
 from .forms import ContactForm, FormularzRejestracji, FormSearch
 from django.core.mail import send_mail, BadHeaderError
 from django.db.models import Q
@@ -13,6 +15,21 @@ from django.db.models import Q
 #Strona główna projektu
 from .models import News, Product
 
+class Index(View):
+
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    news = News.objects.all()
+
+    def get(self, request):
+        template_name = 'index.html'
+        query = request.GET.get('search')
+        context = {'template_name':'index.html'}
+        if query:
+            self.list = self.list.filter(name=query)
+            self.flaga = True
+        return render(request, template_name, {'form': self.form, 'list': self.list, 'flaga': self.flaga,  'news': self.news,})
 
 
 
@@ -32,38 +49,129 @@ def index(request):
 
 @login_required
 def index_user(request):
-    return render(request, 'index_user.html')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 def test_response(request):
-    return HttpResponse('test')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 def wiadomosci(request):
-    return HttpResponse('test-wiadomosci')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 def sport(request):
-    return HttpResponse('test')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 def biznes(request):
-    return HttpResponse('test')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 def regionalne(request):
-    return HttpResponse('test')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 def kultura(request):
-    return HttpResponse('test')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 def styl_zycia(request):
-    return HttpResponse('test')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 def technologie(request):
-    return HttpResponse('test')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 def motoryzacja(request):
-    return HttpResponse('test')
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 
 
 def email(request):
+
+    # wyszukiwarka
+    form1 = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+
+    #     Formularz kontaktowy
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -77,7 +185,7 @@ def email(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('thanks')
-    return render(request, "kontakt.html", {'form': form})
+    return render(request, "kontakt.html", {'form': form,'form1': form1,  'list':list, 'flaga':flaga})
 
 def thanks(request):
     return HttpResponse('Thank you for your message.')
@@ -113,9 +221,19 @@ class UserFormView(View):
 
 
 def zakupy(request):
-    elements = Product.objects.all()
-    return render(request, 'zakupy.html', {'elements':elements})
+    news = News.objects.all()
+    form = FormSearch
+    list = Product.objects.all()
+    flaga = False
+    query = request.GET.get('search')
+    if query:
+        list = list.filter(name=query)
+        flaga = True
+    return render(request, 'index.html', {'form': form, 'news': news, 'list': list, 'flaga': flaga})
 
 
 def search_results(request):
     return render(request, 'search_results.html')
+
+
+

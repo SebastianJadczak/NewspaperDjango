@@ -61,16 +61,13 @@
 
             {% if flaga %}
 
-            {% if list is not Null  %}
-
                {% for element in list %}
                 <p>{{element.name}}</p>
                 <p>{{element.description}}</p>
-            {% endfor %}
+            {% empty %}
 
-            {%else%}
                <p>Nie ma takiego artykułu</p>
-            {%endif%}
+            {% endfor %}
 
             {%else%}
             <div class="left_main">
